@@ -1,0 +1,6 @@
+- name: install cron job (ansible-pull)
+  cron:
+    user: wynbot
+    name: "WynBot Provision"
+    minute: "*/10"
+    job: "/usr/bin/ansible-pull -o -U https://github.com/WynSoftCloud/ansible_server_pull.git > /dev/null"

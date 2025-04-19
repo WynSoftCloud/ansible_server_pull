@@ -1,0 +1,12 @@
+- name: create ansible user
+  user:
+    name: wynbot
+    system: yes
+
+- name: copy sudoers_wynbot
+  copy:
+    src: files/sudoers_wynbot
+    dest: /etc/sudoers.d/wynbot
+    owner: root
+    group: root
+    mode: 0440  
